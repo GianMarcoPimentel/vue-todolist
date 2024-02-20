@@ -75,12 +75,16 @@ createApp({
             this.newTask.text = '';
  
         },
-        /* logTask : function(){
-          console.log("new");
-        } */
+        /* onEnter(event){
+          console.log("hai premuto invio")
+        }, */
+        handleSubmit(){
+            this.tasks.push({...this.newTask});
+            this.newTask.text = '';
+        },
         toggleDone(index){
           this.tasks[index].done = ! this.tasks[index].done;
-          console.log(this.tasks[index].done);
+          
         }
 
     },

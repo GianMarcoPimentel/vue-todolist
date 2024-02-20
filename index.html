@@ -44,6 +44,7 @@
             <span class="input-group-text">Inserisci una nuova task da fare</span>
             <input 
             v-model="newTask.text"
+            @keyup.enter="addTask()"
             type="text" 
             class="form-control" 
             placeholder="Testo della task" 
@@ -59,7 +60,7 @@
             class="btn btn-light"
             id="new-task"
             @click="addTask()"
-            @v-on:keyup.enter="logTask"
+            
             >
             Insersci
             </button>
