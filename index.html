@@ -18,14 +18,14 @@
         <h1>
             To Do list
         </h1>
-        <ul>
-            <li v-for="currentTask in tasks" 
+        <ul class="list-group">
+            <li v-for="(currentTask, index) in tasks" 
             class="list-group-item p-3 d-flex justify-content-between align-items-center " 
-            :class="currentTask.done == false ? 'text-decoration-line-through ' : ''"
+            :class="currentTask.done == true ? 'text-decoration-line-through ' : ''"
             >
                 {{currentTask.text}}
 
-                <i class="fa-solid fa-x "></i>
+                <i @click="deleteTask(taskIndex)" class="fa-solid fa-x p-2 border border-3 rounded-5   "></i>
             </li>
         </ul>
     </div>

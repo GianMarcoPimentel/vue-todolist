@@ -27,6 +27,7 @@ createApp({
 
     data(){
         return{
+            taskIndex : 0,
             tasks : [
                 {
                   text: "Fare lezione ",
@@ -38,17 +39,22 @@ createApp({
                 },
                 {
                   text: "Andare a fare allenamento",
-                  done: false
+                  done: true,
                 },
                 {
                   text: "Preparare la cena",
-                  done: true
+                  done: false,
                 }
               ],
         }
     }, 
     methods: {
-
+        // aggiungo la funzione delete
+        deleteTask(taskIndex){
+            // devo eliminare un elemento dall'array al click
+            // uso la proprietà splice
+            console.log(this.tasks.splice(taskIndex, 1));
+        }
     },
 
 }).mount("#app"); 
@@ -58,4 +64,12 @@ createApp({
 //cliccando su di essa, il todo viene rimosso dalla lista.
 
 // inserisco un campo di input preso da bootstrap in html 
-// 
+// gestiusco il click sulla 'x' tramite vue
+/* methods: {
+
+    deleteTask(taskIndex) {
+        // elimino dall'array tasks l'elemento che corrisponde all'indice riportato nel parametro
+
+        this.tasks.splice(taskIndex, 1);
+
+    }, */
