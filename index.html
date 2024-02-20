@@ -18,6 +18,13 @@
         <h1>
             To Do list
         </h1>
+        <ul >
+            <li v-for="currentTask in tasks" 
+            class="list-group-item p-3" 
+            >
+                {{currentTask.text}}
+            </li>
+        </ul>
     </div>
 
 
