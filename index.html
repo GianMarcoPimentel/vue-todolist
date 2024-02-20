@@ -20,10 +20,12 @@
         </h1>
         <ul>
             <li v-for="currentTask in tasks" 
-            class="list-group-item p-3" 
+            class="list-group-item p-3 d-flex justify-content-between align-items-center " 
             :class="currentTask.done == false ? 'text-decoration-line-through ' : ''"
             >
                 {{currentTask.text}}
+
+                <i class="fa-solid fa-x "></i>
             </li>
         </ul>
     </div>

@@ -52,4 +52,10 @@ createApp({
     },
 
 }).mount("#app"); 
-  
+
+//MILESTONE 2
+//Visualizzare a fianco ad ogni item ha una ":x:": 
+//cliccando su di essa, il todo viene rimosso dalla lista.
+
+// inserisco un campo di input preso da bootstrap in html 
+// 
