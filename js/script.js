@@ -65,11 +65,3 @@ createApp({
 
 // inserisco un campo di input preso da bootstrap in html 
 // gestiusco il click sulla 'x' tramite vue
-/* methods: {
-
-    deleteTask(taskIndex) {
-        // elimino dall'array tasks l'elemento che corrisponde all'indice riportato nel parametro
-
-        this.tasks.splice(taskIndex, 1);
-
-    }, */
