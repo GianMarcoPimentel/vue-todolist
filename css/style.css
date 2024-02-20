@@ -1,3 +1,7 @@
-i{
-    text-decoration: none;
+h1{
+    transform: scale(1);
+    transition: trasform 0.4 ease;
+}
+h1:hover{
+    transform: scale(1.1);
 }

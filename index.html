@@ -15,7 +15,7 @@
          <!-- Script per utlizzate vue  -->
     <script src="https://unpkg.com/vue@3"></script>
     <div id="app" class="container py-4">
-        <h1>
+        <h1 class="text-center mb-3 text-decoration-underline p-3">
             To Do list
         </h1>
         <ul v-if="tasks.length > 0" 
@@ -23,6 +23,7 @@
             <li v-for="(currentTask, index) in tasks" 
             class="list-group-item p-3 d-flex justify-content-between align-items-center " 
             :class="currentTask.done == true ? 'text-decoration-line-through ' : ''"
+            @click="toggleDone(index)"
             >
                 {{currentTask.text}}
 
@@ -58,6 +59,7 @@
             class="btn btn-light"
             id="new-task"
             @click="addTask()"
+            @v-on:keyup.enter="logTask"
             >
             Insersci
             </button>

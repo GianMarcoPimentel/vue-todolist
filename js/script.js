@@ -74,7 +74,15 @@ createApp({
             this.tasks.push({...this.newTask});
             this.newTask.text = '';
  
+        },
+        /* logTask : function(){
+          console.log("new");
+        } */
+        toggleDone(index){
+          this.tasks[index].done = ! this.tasks[index].done;
+          console.log(this.tasks[index].done);
         }
+
     },
 
 }).mount("#app"); 
