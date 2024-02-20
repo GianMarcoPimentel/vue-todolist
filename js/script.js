@@ -19,9 +19,6 @@ Bonus:
 
 */
 
-// MILESTONE 1
-// Stampare all'interno di una lista HTML un item per ogni todo.
-// Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 const {createApp} = Vue
 createApp({
 
@@ -59,9 +56,4 @@ createApp({
 
 }).mount("#app"); 
 
-//MILESTONE 2
-//Visualizzare a fianco ad ogni item ha una ":x:": 
-//cliccando su di essa, il todo viene rimosso dalla lista.
 
-// inserisco un campo di input preso da bootstrap in html 
-// gestiusco il click sulla 'x' tramite vue
