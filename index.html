@@ -30,20 +30,24 @@
             </li>
         </ul>
         <div v-else 
-        class="bg-success text-center rounded-3 ">
+        class="bg-success text-center rounded-3 py-3">
         Complimenti!<br>
         Hai finito la lista di cose da fare! <br>
         A domani per altre attività!<br>
         👋🏻
-        </div>
+    </div>
+        
+    <div id="new-task">
+
         <div class="input-group flex-nowrap mt-5 ">
             <span class="input-group-text">Inserisci una nuova task da fare</span>
             <input 
+            v-model="newTask"
             type="text" 
             class="form-control" 
             placeholder="Testo della task" 
             aria-label="Testo della task"
-            aria-describedby="add-task"
+            aria-describedby="new-task"
             >
             <!--
                  Aggiungo il button al quale darò l'azione del 
@@ -52,10 +56,13 @@
             <button 
             type="button" 
             class="btn btn-light"
+            id="new-task"
+            @click="addTask()"
             >
             Insersci
             </button>
-          </div>
+        </div>
+    </div>
     </div>
 
 

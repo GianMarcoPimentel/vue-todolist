@@ -24,7 +24,10 @@ createApp({
 
     data(){
         return{
-            taskIndex : 0,
+            /* taskIndex : 0, */
+            //memorizzo una newTask vuota alla quale aggiungero
+            // tramite un .push le nuove cose da fare 
+            newTask : '',
             tasks : [
                 {
                   text: "Fare lezione ",
@@ -50,7 +53,20 @@ createApp({
         deleteTask(taskIndex){
             // devo eliminare un elemento dall'array al click
             // uso la proprietà splice
-            console.log(this.tasks.splice(taskIndex, 1));
+            this.tasks.splice(taskIndex, 1);
+        },
+
+        addTask(){
+            //console.log("new"), funziona
+            //aggiungo il testo scritto nell'input
+            // nella lista di cose da fare
+            // this.newTask
+            
+            this.tasks.push({
+                text: this.newTask,
+                
+            });
+            
         }
     },
 
