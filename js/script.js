@@ -27,7 +27,12 @@ createApp({
             /* taskIndex : 0, */
             //memorizzo una newTask vuota alla quale aggiungero
             // tramite un .push le nuove cose da fare 
-            newTask : '',
+            newTask : [
+                {
+                  text : "",
+                  done: false,
+                },
+              ],
             tasks : [
                 {
                   text: "Fare lezione ",
@@ -61,10 +66,13 @@ createApp({
             //aggiungo il testo scritto nell'input
             // nella lista di cose da fare
             // this.newTask
-            this.tasks.push({...this.newTask});
+            /* this.tasks.push({...this.newTask});
             this.newTask = {
                 text : '',
-            };
+            }; */
+
+            this.tasks.push({...this.newTask});
+            this.newTask.text = '';
  
         }
     },
