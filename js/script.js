@@ -57,6 +57,7 @@ createApp({
         // aggiungo la funzione delete
         deleteTask(taskIndex){
             // devo eliminare un elemento dall'array al click
+            //console.log(this.tasks[taskIndex]);
             // uso la proprietà splice
             this.tasks.splice(taskIndex, 1);
         },
@@ -70,19 +71,30 @@ createApp({
             this.newTask = {
                 text : '',
             }; */
+             
+            // .trim() elimina da quella stringa gli spazi vuoti
+            // solo all'inizio e alla fine
+            // quindi non posso inserire una stringa vuota nell'input
+            if(this.newTask.text.trim() != "") {
 
-            this.tasks.push({...this.newTask});
-            this.newTask.text = '';
+
+              this.tasks.push({...this.newTask})
+              this.newTask.text = ""
+
+            }
+            
+            
+            
+
  
         },
         /* onEnter(event){
           console.log("hai premuto invio")
         }, */
-        handleSubmit(){
-            this.tasks.push({...this.newTask});
-            this.newTask.text = '';
-        },
         toggleDone(index){
+          //proprietà del task selezionato
+          //console.log(this.tasks[index].done);
+          // la inverto
           this.tasks[index].done = ! this.tasks[index].done;
           
         }

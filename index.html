@@ -20,37 +20,44 @@
         </h1>
         <ul v-if="tasks.length > 0" 
         class="list-group">
+
             <li v-for="(currentTask, index) in tasks" 
             class="list-group-item p-3 d-flex justify-content-between align-items-center " 
-            :class="currentTask.done == true ? 'text-decoration-line-through ' : ''"
-            @click="toggleDone(index)"
+            
             >
-                {{currentTask.text}}
+                <span :class="currentTask.done == true ? 'text-decoration-line-through ' : '' "
+                @click="toggleDone(index)" >
+                    {{currentTask.text}}
+                </span>
 
-                <i @click="deleteTask(taskIndex)" class="fa-solid fa-x p-2 border border-3 rounded-5   "></i>
+                <i @click="deleteTask(taskIndex)" class="fa-solid fa-x p-2 border border-3 rounded-5  "></i>
+            
             </li>
+
         </ul>
+
         <div v-else 
         class="bg-success text-center rounded-3 py-3">
+
         Complimenti!<br>
         Hai finito la lista di cose da fare! <br>
         A domani per altre attività!<br>
         👋🏻
-    </div>
+
+        </div>
          
-    
     <div id="new-task">
 
         <div class="input-group flex-nowrap mt-5 ">
             <span class="input-group-text">Inserisci una nuova task da fare</span>
             <input 
             v-model="newTask.text"
-            @keyup.enter="addTask()"
             type="text" 
             class="form-control" 
             placeholder="Testo della task" 
             aria-label="Testo della task"
             aria-describedby="new-task"
+            @keyup.enter="addTask()"
             >
             <!--
                  Aggiungo il button al quale darò l'azione del 
